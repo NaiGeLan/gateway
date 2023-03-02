@@ -1,4 +1,4 @@
-import { FastifyReply, FastifyRequest } from 'fastify';
+import { FastifyReply, FastifyRequest } from "fastify";
 import {
   ExceptionFilter,
   Catch,
@@ -6,7 +6,7 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { BusinessException } from './business.exception';
+import { BusinessException } from "./business.exception";
 
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -16,6 +16,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const request = ctx.getRequest<FastifyRequest>();
     const status = exception.getStatus();
 
+    // 处理业务异常
     if (exception instanceof BusinessException) {
       const error = exception.getResponse();
       response.status(HttpStatus.OK).send({
@@ -27,6 +28,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       });
       return;
     }
+
     response.status(status).send({
       statusCode: status,
       timestamp: new Date().toISOString(),
