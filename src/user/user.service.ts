@@ -6,10 +6,10 @@ import { User } from './user.mongo.entity';
 export class UserService {
   constructor(
     @Inject('USER_REPOSITORY')
-    private userRepository: MongoRepository<User>
-  ) { }
+    private userRepository: MongoRepository<User>,
+  ) {}
 
   createOrSave(user) {
-    return this.userRepository.save(user)
+    return this.userRepository.save(user);
   }
 }

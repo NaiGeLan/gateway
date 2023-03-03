@@ -13,5 +13,11 @@ MONGODB_CONFIG:
 REDIS_CONFIG:
   host: "43.142.129.124"  # redis 链接
   port: 6379         # redis 端口
-  auth: "123456"       # redis 连接密码
-  db: 1              # redis 数据库
+  # auth: "123456"       # redis 连接密码
+  # db: 1              # redis 数据库
+
+FEISHU_CONFIG:
+  FEISHU_URL: https://open.feishu.cn/open-apis
+  FEISHU_API_HOST: https://open.feishu.cn
+  FEISHU_APP_ID: cli_a2ed5e7be4f9500d
+  FEISHU_APP_SECRET: HtMNYItwGbdp6yJv4o2j1fLrplwl6Mem

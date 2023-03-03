@@ -1,4 +1,4 @@
-import { FastifyReply, FastifyRequest } from "fastify";
+import { FastifyReply, FastifyRequest } from 'fastify';
 import {
   ExceptionFilter,
   Catch,
@@ -6,7 +6,7 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
-import { BusinessException } from "./business.exception";
+import { BusinessException } from './business.exception';
 
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter {
